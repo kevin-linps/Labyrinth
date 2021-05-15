@@ -1,0 +1,12 @@
+[submodule "Labyrinth/Vendor/glfw"]
+	path = Labyrinth/Vendor/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "Labyrinth/Vendor/glm"]
+	path = Labyrinth/Vendor/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "Labyrinth/Vendor/tomlplusplus"]
+	path = Labyrinth/Vendor/tomlplusplus
+	url = https://github.com/marzer/tomlplusplus.git
+[submodule "Labyrinth/Vendor/stb"]
+	path = Labyrinth/Vendor/stb
+	url = https://github.com/nothings/stb.git
