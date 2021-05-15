@@ -1,0 +1,10 @@
+[shaders]
+
+    [shaders.flashlight]
+    vert = "flashlight.vert"
+    frag = "flashlight.frag"
+
+[textures]
+wall   = "texture_wall.jpg"     # https://www.tilingtextures.com/warm-rectangular-stone-wall/#google_vignette
+ground = "texture_ground.jpg"   # https://www.all3dfree.net/dirt-textures.html
+pillar = "texture_pillar.jpg"   # https://besthqwallpapers.com/download/original/85739
