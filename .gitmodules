@@ -1,12 +1,12 @@
 [submodule "lib/glm"]
-	path = lib/glm
+	path = Labyrinth/Vendor/glm
 	url = https://github.com/g-truc/glm.git
 [submodule "lib/glfw"]
-	path = lib/glfw
+	path = Labyrinth/Vendor/glfw
 	url = https://github.com/glfw/glfw.git
 [submodule "lib/stb"]
-	path = lib/stb
+	path = Labyrinth/Vendor/stb
 	url = https://github.com/nothings/stb.git
 [submodule "lib/tomlplusplus"]
-	path = lib/tomlplusplus
+	path = Labyrinth/Vendor/tomlplusplus
 	url = https://github.com/marzer/tomlplusplus.git
