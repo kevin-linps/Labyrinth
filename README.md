@@ -4,12 +4,10 @@ Labyrinth is a game where the player navigates in a dungeon-themed maze with a f
 
 ![Alt text](/screenshot.jpg?raw=true "screenshot")
 
-Now. Let's have fun!
-
 
 ## Building the project
 
-This project uses CMake so that it is IDE-independent. Ideally this project is also platform-independent, but so far it has only been tested with Visual Studio 2019 on Windows. Linux and Mac testings are on the way.
+This project uses CMake to generate build files. It is IDE-independent. Ideally this project is also platform-independent, but so far it has only been tested with Visual Studio 2019 on Windows. Linux and Mac testings are on the way.
 
 
 ## Features to be added
