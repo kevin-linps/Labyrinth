@@ -42,8 +42,8 @@ void Labyrinth::Initialize()
                         1.0f, 0.0f, x1,   y1,   z2,   1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
                     };
                     GLuint indices[] = {
-                        0 + num_coords, 1 + num_coords, 2 + num_coords,
-                        0 + num_coords, 2 + num_coords, 3 + num_coords,
+                        0u + num_coords, 1u + num_coords, 2u + num_coords,
+                        0u + num_coords, 2u + num_coords, 3u + num_coords,
                     };
 
                     wall_vertices.insert(wall_vertices.end(), vertices, vertices + 32);
@@ -59,8 +59,8 @@ void Labyrinth::Initialize()
                         x2, y1, z2, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
                     };
                     GLuint indices[] = {
-                        0 + num_coords, 1 + num_coords, 2 + num_coords,
-                        0 + num_coords, 2 + num_coords, 3 + num_coords,
+                        0u + num_coords, 1u + num_coords, 2u + num_coords,
+                        0u + num_coords, 2u + num_coords, 3u + num_coords,
                     };
 
                     wall_vertices.insert(wall_vertices.end(), vertices, vertices + 32);
@@ -75,8 +75,8 @@ void Labyrinth::Initialize()
                         1.0f, 0.0f, x1,   y1,   z1,   0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
                     };
                     GLuint indices[] = {
-                        0 + num_coords, 1 + num_coords, 2 + num_coords,
-                        0 + num_coords, 2 + num_coords, 3 + num_coords,
+                        0u + num_coords, 1u + num_coords, 2u + num_coords,
+                        0u + num_coords, 2u + num_coords, 3u + num_coords,
                     };
 
                     wall_vertices.insert(wall_vertices.end(), vertices, vertices + 32);
@@ -92,8 +92,8 @@ void Labyrinth::Initialize()
                         x1, y1, z2, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
                     };
                     GLuint indices[] = {
-                        0 + num_coords, 1 + num_coords, 2 + num_coords,
-                        0 + num_coords, 2 + num_coords, 3 + num_coords,
+                        0u + num_coords, 1u + num_coords, 2u + num_coords,
+                        0u + num_coords, 2u + num_coords, 3u + num_coords,
                     };
 
                     wall_vertices.insert(wall_vertices.end(), vertices, vertices + 32);
@@ -146,12 +146,12 @@ void Labyrinth::Initialize()
                 };
 
                 GLuint indices[] = {
-                    0 + num_coords,  1 + num_coords,  2 + num_coords,  0 + num_coords,
-                    2 + num_coords,  3 + num_coords,  4 + num_coords,  5 + num_coords,
-                    6 + num_coords,  4 + num_coords,  6 + num_coords,  7 + num_coords,
-                    8 + num_coords,  9 + num_coords,  10 + num_coords, 8 + num_coords,
-                    10 + num_coords, 11 + num_coords, 12 + num_coords, 13 + num_coords,
-                    14 + num_coords, 12 + num_coords, 14 + num_coords, 15 + num_coords,
+                    0u + num_coords,  1u + num_coords,  2u + num_coords,  0u + num_coords,
+                    2u + num_coords,  3u + num_coords,  4u + num_coords,  5u + num_coords,
+                    6u + num_coords,  4u + num_coords,  6u + num_coords,  7u + num_coords,
+                    8u + num_coords,  9u + num_coords,  10u + num_coords, 8u + num_coords,
+                    10u + num_coords, 11u + num_coords, 12u + num_coords, 13u + num_coords,
+                    14u + num_coords, 12u + num_coords, 14u + num_coords, 15u + num_coords,
                 };
 
                 pillar_vertices.insert(pillar_vertices.end(), vertices, vertices + 128);
@@ -190,8 +190,8 @@ void Labyrinth::Initialize()
                 };
 
                 GLuint indices[] = {
-                    0 + num_coords, 1 + num_coords, 2 + num_coords,
-                    0 + num_coords, 2 + num_coords, 3 + num_coords,
+                    0u + num_coords, 1u + num_coords, 2u + num_coords,
+                    0u + num_coords, 2u + num_coords, 3u + num_coords,
                 };
 
                 ground_vertices.insert(ground_vertices.end(), vertices, vertices + 32);
@@ -238,8 +238,8 @@ void Labyrinth::ProcessMouseEvents()
     double xpos, ypos;
     glfwGetCursorPos(window_, &xpos, &ypos);
 
-    float xoffset = xpos - last_mouse_x_;
-    float yoffset = last_mouse_y_ - ypos;
+    float xoffset = (float) (xpos - last_mouse_x_);
+    float yoffset = (float) (last_mouse_y_ - ypos);
 
     last_mouse_x_ = xpos;
     last_mouse_y_ = ypos;
@@ -249,8 +249,8 @@ void Labyrinth::ProcessMouseEvents()
 
 void Labyrinth::ProcessKeyEvents()
 {
-    float curr_frame = glfwGetTime();
-    float delta_time = curr_frame - last_frame_;
+    float curr_frame = (float) glfwGetTime();
+    float delta_time = (float) (curr_frame - last_frame_);
 
     if (glfwGetKey(window_, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window_, true);
@@ -265,8 +265,8 @@ void Labyrinth::ProcessKeyEvents()
         camera.ProcessKeyboard(kRight, delta_time);
 
     glm::vec3 p = camera.view_position_;
-    int x = p.x / cell_width_;
-    int y = p.z / cell_width_;
+    int x = (int) (p.x / cell_width_);
+    int y = (int) (p.z / cell_width_);
     int index = x + y * maze_col_;
     int cell = maze_.structure_.at(index);
 

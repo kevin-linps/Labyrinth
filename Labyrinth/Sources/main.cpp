@@ -29,7 +29,7 @@ int main()
         return -1;
     }
 
-    srand(time(NULL));
+    srand((unsigned int) time(NULL));
 
     std::string settings = "settings.toml";
     labyrinth::Labyrinth labyrinth(window, settings);
